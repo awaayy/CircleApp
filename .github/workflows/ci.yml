@@ -38,3 +38,9 @@ jobs:
           uses: actions/setup-dotnet@v2
           with:
             dotnet-version: '8.0'
+        
+        - name: Restoring
+          run: dotnet restore
+
+        - name: Run tests
+          run: dotnet test --configuration Release --no-restore --verbosity normal
