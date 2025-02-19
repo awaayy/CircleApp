@@ -59,5 +59,8 @@ jobs:
         with:
           dotnet-version: '8.0'
 
+      - name: Restore dependencies (for analysis)
+        run: dotnet restore
+
       - name: Run code analysis via MSBuild
         run: dotnet build --configuration Release --no-restore /p:RunCodeAnalysis=true
